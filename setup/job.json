@@ -1,0 +1,82 @@
+{
+ "name": "casio-cx-refresh（アンケート分類・集計・Lakebase 同期）",
+ "max_concurrent_runs": 1,
+ "parameters": [
+  {
+   "name": "catalog",
+   "default": "main"
+  },
+  {
+   "name": "schema",
+   "default": "casio_cx"
+  },
+  {
+   "name": "idr_schema",
+   "default": "casio_cx_idr"
+  },
+  {
+   "name": "model_service",
+   "default": "main.casio_cx.survey_classifier"
+  },
+  {
+   "name": "synced_tables",
+   "default": "main.casio_cx_serving.customers,main.casio_cx_serving.recommendations,main.casio_cx_serving.segment_summary,main.casio_cx_serving.topic_summary,main.casio_cx_serving.campaign_members,main.casio_cx_serving.contact_profile"
+  }
+ ],
+ "tasks": [
+  {
+   "task_key": "prepare",
+   "notebook_task": {
+    "notebook_path": "/Workspace/Users/<you@example.com>/casio-cx-demo/jobs/01_prepare"
+   }
+  },
+  {
+   "task_key": "classify",
+   "depends_on": [
+    {
+     "task_key": "prepare"
+    }
+   ],
+   "notebook_task": {
+    "notebook_path": "/Workspace/Users/<you@example.com>/casio-cx-demo/jobs/02_classify"
+   }
+  },
+  {
+   "task_key": "build_gold",
+   "depends_on": [
+    {
+     "task_key": "classify"
+    }
+   ],
+   "notebook_task": {
+    "notebook_path": "/Workspace/Users/<you@example.com>/casio-cx-demo/jobs/03_build_gold"
+   }
+  },
+  {
+   "task_key": "campaign_reco",
+   "depends_on": [
+    {
+     "task_key": "build_gold"
+    }
+   ],
+   "notebook_task": {
+    "notebook_path": "/Workspace/Users/<you@example.com>/casio-cx-demo/jobs/05_campaign_reco"
+   }
+  },
+  {
+   "task_key": "sync_lakebase",
+   "depends_on": [
+    {
+     "task_key": "campaign_reco"
+    }
+   ],
+   "notebook_task": {
+    "notebook_path": "/Workspace/Users/<you@example.com>/casio-cx-demo/jobs/04_sync_lakebase"
+   }
+  }
+ ],
+ "queue": {
+  "enabled": true
+ },
+ "performance_target": "PERFORMANCE_OPTIMIZED"
+}

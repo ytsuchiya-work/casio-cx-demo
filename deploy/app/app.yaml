@@ -1,0 +1,16 @@
+command: ["npm", "run", "start"]
+env:
+  - name: UC_CATALOG
+    value: main
+  - name: UC_SCHEMA
+    value: casio_cx
+  - name: SERVING_SCHEMA
+    value: casio_cx_serving
+  - name: WAREHOUSE_ID
+    value: <warehouse-id>
+  - name: JOB_ID
+    value: "<job-id>"
+  - name: LAKEBASE_ENDPOINT
+    value: projects/casio-cx-demo/branches/production/endpoints/primary
+  - name: LAKEBASE_DATABASE
+    value: databricks_postgres

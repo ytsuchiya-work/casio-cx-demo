@@ -221,3 +221,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# casio-cx-demo
+app/server/dist/
+app/web/dist/
+app/.env.sp
+data/
+video/rec/
+video/vo/
+video/out/
+video/tmp/
+video/vo-audition/

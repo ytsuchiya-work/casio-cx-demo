@@ -1,0 +1,6 @@
+[
+ {"id": "title", "eyebrow": "CASIO カスタマーインサイト・デモ", "title": "アンケートの回答が、<br>数分後のおすすめに変わるまで", "sub": "Qualtrics × Lakebase × Lakehouse × CustomerLake", "chips": ["集める", "分かる", "届ける"], "note": "デモのデータはすべて架空です。製品名・型番・価格は casio.com/jp の掲載内容（2026年11月25日時点）を参考にしています。"},
+ {"id": "ch_app", "dark": true, "eyebrow": "DEMO", "title": "実際のアプリで、<br>1件の回答を追いかける", "sub": "「最近登山を始めた」お客様の回答を送信"},
+ {"id": "ch_ws", "dark": true, "eyebrow": "UNDER THE HOOD", "title": "Databricks の画面で、<br>裏側を確かめる", "sub": "名寄せ・対象者づくり・ジョブ・同期テーブル"},
+ {"id": "end", "eyebrow": "まとめ", "title": "ひとつの基盤で<br>「集める・分かる・届ける」を回す", "sub": "データを運ぶ仕組みを作らずに、顧客体験の改善を速くする", "chips": ["Lakebase", "Lakehouse", "CustomerLake", "Unity Catalog"], "note": "© 2026 Databricks, Inc."}
+]

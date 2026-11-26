@@ -1,0 +1,21 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><style>
+body{margin:0;width:1920px;height:1080px;font-family:"Hiragino Sans",sans-serif;background:#fff;color:#1B3037}
+h1{position:absolute;left:110px;top:70px;margin:0;font-size:56px}
+.sub{position:absolute;left:112px;top:150px;font-size:32px;color:#FF3621;font-weight:700}
+.row{position:absolute;left:110px;right:110px;display:flex;align-items:center;justify-content:space-between}
+.b{flex:none;width:300px;height:330px;padding:26px 24px;box-sizing:border-box;background:#F4F6F7;border-top:8px solid var(--c);display:flex;flex-direction:column;gap:10px}
+.b img{width:78px;height:78px}.b .t{font-size:32px;font-weight:800}.b .d{font-size:24px;color:#41606A;line-height:1.45}
+.ar{font-size:44px;color:#9AABB0}
+.back{position:absolute;left:110px;right:110px;top:690px;height:110px;background:#1B3037;color:#fff;display:flex;align-items:center;padding:0 40px;font-size:32px;font-weight:700;gap:24px}
+.back b{color:#FF8A75;white-space:nowrap}
+</style></head><body>
+<h1>このデモのしくみ</h1><div class="sub">回答は Lakebase → Lakehouse → Lakebase とひと回りして、おすすめになる</div>
+<div class="row" style="top:300px">
+ <div class="b" style="--c:#6B4FBB"><div style="width:78px;height:78px;background:#6B4FBB;color:#fff;font-weight:800;font-size:30px;display:grid;place-items:center">XM</div><div class="t">Qualtrics</div><div class="d">アンケートの回答を<br>Webhook でアプリへ</div></div><div class="ar">▶</div>
+ <div class="b" style="--c:#1B5161"><img src="icons/lakebase.png"><div class="t">Lakebase</div><div class="d">回答を保存<br>（Postgres）</div></div><div class="ar">▶</div>
+ <div class="b" style="--c:#1B5161"><img src="icons/delta_lake.png"><div class="t">Lakehouse</div><div class="d">CDF で十数秒以内に<br>Delta の履歴表へ</div></div><div class="ar">▶</div>
+ <div class="b" style="--c:#FF3621"><img src="icons/unity_ai_gateway.png"><div class="t">AI 分類・集計</div><div class="d">ジョブが Claude で<br>自由記述を分類</div></div><div class="ar">▶</div>
+ <div class="b" style="--c:#00A972"><img src="icons/unity_catalog.png"><div class="t">CustomerLake</div><div class="d">名寄せ（Profile）<br>対象者（Campaign）</div></div>
+</div>
+<div class="back"><b>戻り道：</b>集計表を同期テーブル（LTAP Direct Writes）で Lakebase へ → アプリが表示</div>
+</body></html>
